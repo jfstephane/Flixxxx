@@ -8,6 +8,15 @@
 
 import UIKit
 
+enum MovieKeys {
+    static let title = "title"
+    static let releaseDate = "release_date"
+    static let overview = "overview"
+    static let backdropPath = "backdrop_path"
+    static let posterPath = "poster_path"
+   
+}
+
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var posterImageView: UIImageView!
@@ -16,18 +25,33 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var frontImage: UIImageView!
     
-     //var movies: [[String: Any]] = []
     var movie: [String : Any]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let title = movie!["title"] as! String
-        let overview = movie!["overview"] as! String
+        let title = movie![MovieKeys.title] as! String
+        let overview = movie![MovieKeys.overview] as! String
         
         titleLabel.text = title
         overviewLabel.text = overview
         
+        let backdropPathString = movie![MovieKeys.backdropPath] as! String
+        let posterPathString = movie![MovieKeys.posterPath] as! String
+        let baseURLString = "https://image.tmdb.org/t/p/w500/"
+        
+        let backDropURL = URL(string: baseURLString + backdropPathString)!
+        posterImageView.af_setImage(withURL: backDropURL)
+        
+        let posterURL = URL(string: baseURLString + posterPathString)!
+        let placeholderImage = UIImage(named: "reel_tabbar_icon")
+        frontImage.af_setImage(withURL: posterURL,
+                               placeholderImage: placeholderImage)
+        frontImage.layer.borderWidth = 1
+        frontImage.layer.cornerRadius = 10
         
 
         // Do any additional setup after loading the view.
