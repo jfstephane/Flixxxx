@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var movies: [[String: Any]] = []
     var searchedMovies = [[String: Any]]()
+    var filteredMovies: [[String: Any]] = [];
     var refreshControl: UIRefreshControl!
     //var searchController: UISearchController!
     
@@ -67,6 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 self.movies = dataDictionary["results"] as! [[String: Any]]
+                 self.filteredMovies = self.movies;
                 self.tableView.reloadData()
             }
             self.refreshControl.endRefreshing()
@@ -163,7 +165,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+   /* func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.searchBar.showsCancelButton = true
     }
     
@@ -171,6 +173,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchBar.showsCancelButton = false
         searchBar.text = "cancel"
         searchBar.resignFirstResponder()
+    }*/
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredMovies = searchText.isEmpty ? movies : movies.filter{ (movie: [String: Any]) -> Bool in
+            return (movie["title"] as! String).localizedCaseInsensitiveContains(searchText)
+        }
+        tableView.reloadData()
     }
 
    
