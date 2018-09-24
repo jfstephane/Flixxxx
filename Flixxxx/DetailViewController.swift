@@ -52,7 +52,7 @@ class DetailViewController: UIViewController {
                                placeholderImage: placeholderImage)
         frontImage.layer.borderWidth = 1
         frontImage.layer.cornerRadius = 10
-        
+        navigationItem.title = movie![MovieKeys.title] as? String
 
         // Do any additional setup after loading the view.
     }
