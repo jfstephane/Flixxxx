@@ -50,8 +50,15 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource {
         if let posterPathString = movie["poster_path"] as? String {
             let baseURLString = "https://image.tmdb.org/t/p/w500"
             let posterUrl = URL(string: baseURLString + posterPathString)!
-            cell.posterImage.af_setImage(withURL: posterUrl)
+            let placeholderImage = UIImage(named: "reel_tabbar_icon")
+            cell.posterImage.af_setImage(withURL: posterUrl,
+                                        placeholderImage: placeholderImage )
         }
+        
+        
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
         return cell
     }
     
@@ -59,7 +66,7 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource {
     
     func addMovies() {
         //activityIndicator.startAnimating()
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
+        let url = URL(string: "https://api.themoviedb.org/3/movie/363088/similar?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
