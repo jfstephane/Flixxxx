@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var infoView: UIView!
     
      //var movies: [[String: Any]] = []
     var movie: [String : Any]?
