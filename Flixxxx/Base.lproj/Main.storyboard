@@ -147,7 +147,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93Q-Ck-oyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="7fl-uV-7dV"/>
+                <tapGestureRecognizer id="7fl-uV-7dV">
+                    <connections>
+                        <segue destination="Kai-cL-04r" kind="show" id="XXv-Zp-0yz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2719.1999999999998" y="132.68365817091455"/>
         </scene>
@@ -222,6 +226,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterImage" destination="EWW-8a-S3f" id="xOi-Hl-Joc"/>
+                                            <segue destination="MLM-ta-d0E" kind="show" id="Eo1-3O-sJh"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -278,4 +283,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Eo1-3O-sJh"/>
+    </inferredMetricsTieBreakers>
 </document>
