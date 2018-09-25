@@ -11,6 +11,7 @@
 		64561951215949750056E5EE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64561950215949750056E5EE /* DetailViewController.swift */; };
 		645619532159829B0056E5EE /* PosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645619522159829B0056E5EE /* PosterCell.swift */; };
 		64561955215983090056E5EE /* SuperheroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64561954215983090056E5EE /* SuperheroViewController.swift */; };
+		645619572159A8390056E5EE /* TrailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645619562159A8390056E5EE /* TrailerViewController.swift */; };
 		64834B2A2151B03700A7C85B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64834B292151B03700A7C85B /* AppDelegate.swift */; };
 		64834B2C2151B03700A7C85B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64834B2B2151B03700A7C85B /* ViewController.swift */; };
 		64834B2F2151B03700A7C85B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64834B2D2151B03700A7C85B /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		64561950215949750056E5EE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		645619522159829B0056E5EE /* PosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCell.swift; sourceTree = "<group>"; };
 		64561954215983090056E5EE /* SuperheroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroViewController.swift; sourceTree = "<group>"; };
+		645619562159A8390056E5EE /* TrailerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerViewController.swift; sourceTree = "<group>"; };
 		64834B262151B03600A7C85B /* Flixxxx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flixxxx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64834B292151B03700A7C85B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64834B2B2151B03700A7C85B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				64834B292151B03700A7C85B /* AppDelegate.swift */,
 				64834B2B2151B03700A7C85B /* ViewController.swift */,
 				64834B2D2151B03700A7C85B /* Main.storyboard */,
+				645619562159A8390056E5EE /* TrailerViewController.swift */,
 				64561954215983090056E5EE /* SuperheroViewController.swift */,
 				645619522159829B0056E5EE /* PosterCell.swift */,
 				64561950215949750056E5EE /* DetailViewController.swift */,
@@ -391,6 +394,7 @@
 			files = (
 				64834B582151B62800A7C85B /* MovieCellTableViewCell.swift in Sources */,
 				645619532159829B0056E5EE /* PosterCell.swift in Sources */,
+				645619572159A8390056E5EE /* TrailerViewController.swift in Sources */,
 				64561955215983090056E5EE /* SuperheroViewController.swift in Sources */,
 				64834B2C2151B03700A7C85B /* ViewController.swift in Sources */,
 				64834B2A2151B03700A7C85B /* AppDelegate.swift in Sources */,

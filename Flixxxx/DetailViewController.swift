@@ -63,6 +63,11 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let TrailerViewController = segue.destination as! TrailerViewController
+        TrailerViewController.movieID = (movie![MovieKeys.movieID] as? Int)!
+        
+    }
 
     /*
     // MARK: - Navigation
