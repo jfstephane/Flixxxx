@@ -1,6 +1,4 @@
-# Flixxxx
-CodePath Assignement Week 1
-# Project 1 - *Name of App Here*
+# Project 1 - *Flixxxx*
 
 **FLIXXX** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
