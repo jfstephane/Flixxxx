@@ -15,7 +15,6 @@ enum MovieKeys {
     static let releaseDate = "release_date"
     static let backdropPath = "backdrop_path"
     static let posterPath = "poster_path"
-    
    
 }
 
@@ -63,6 +62,12 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let TrailerViewController = segue.destination as! TrailerViewController
+        TrailerViewController.movieId = (movie![MovieKeys.movieID] as? Int)!
+        
+    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! TrailerViewController
