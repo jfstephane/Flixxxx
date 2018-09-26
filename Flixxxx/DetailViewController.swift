@@ -15,6 +15,7 @@ enum MovieKeys {
     static let releaseDate = "release_date"
     static let backdropPath = "backdrop_path"
     static let posterPath = "poster_path"
+    
    
 }
 
@@ -64,9 +65,11 @@ class DetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let TrailerViewController = segue.destination as! TrailerViewController
-        TrailerViewController.movieID = (movie![MovieKeys.movieID] as? Int)!
-        
+        let vc = segue.destination as! TrailerViewController
+        if let movie = movie {
+            let movieId = String(describing: movie[MovieKeys.movieID]!)
+            vc.movieId = movieId
+        }
     }
 
     /*
