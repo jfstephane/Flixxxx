@@ -116,7 +116,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         )
         
         let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.blue
+        backgroundView.backgroundColor = UIColor.lightGray
         cell.selectedBackgroundView = backgroundView
         
         cell.backgroundColor = UIColor.white

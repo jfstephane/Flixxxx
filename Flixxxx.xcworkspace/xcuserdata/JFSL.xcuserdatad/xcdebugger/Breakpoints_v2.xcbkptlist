@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flixxxx/DetailViewController.swift"
-            timestampString = "559664394.225004"
+            timestampString = "559708080.078527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flixxxx/DetailViewController.swift"
-            timestampString = "559664394.225354"
+            timestampString = "559708080.079031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

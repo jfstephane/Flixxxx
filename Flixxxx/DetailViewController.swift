@@ -12,7 +12,7 @@ enum MovieKeys {
     static let movieID = "id"
     static let title = "title"
     static let overview = "overview"
-    static let releaseDate = "release_date"
+    static let date = "release_date"
     static let backdropPath = "backdrop_path"
     static let posterPath = "poster_path"
    
@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var infoView: UIView!
@@ -36,9 +37,11 @@ class DetailViewController: UIViewController {
         
         let title = movie![MovieKeys.title] as! String
         let overview = movie![MovieKeys.overview] as! String
+        let date = movie![MovieKeys.date] as! String
         
         titleLabel.text = title
         overviewLabel.text = overview
+        dateLabel.text = date
         
         let backdropPathString = movie![MovieKeys.backdropPath] as! String
         let posterPathString = movie![MovieKeys.posterPath] as! String
