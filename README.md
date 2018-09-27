@@ -106,6 +106,8 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://imgur.com/a/JGunbCi.gif' title='Flixxxx Walkthrough' width='' alt='Flixxxx Walkthrough' />
 
+Link to GIF : https://imgur.com/Tb62UYl
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
