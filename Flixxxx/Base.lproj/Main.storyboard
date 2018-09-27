@@ -143,7 +143,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="a1Y-ZF-S8V"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1mR-Hr-Fg7"/>
+                    <navigationItem key="navigationItem" id="1mR-Hr-Fg7">
+                        <barButtonItem key="rightBarButtonItem" title="Play Trailer" style="plain" id="OJZ-Nq-4bP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vP6-2m-LNX">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="qRs-8T-ODg" id="HDa-Ze-vHO"/>
                         <outlet property="frontImage" destination="e8w-sA-7nS" id="HYa-UF-2yN"/>
@@ -152,6 +160,7 @@
                         <outlet property="posterImageView" destination="FWX-Dz-00t" id="qqd-qj-y5r"/>
                         <outlet property="scrollView" destination="iyG-OA-qx4" id="auc-jt-efU"/>
                         <outlet property="titleLabel" destination="1mr-a0-yM4" id="KMq-FI-xra"/>
+                        <outlet property="trailerButton" destination="OJZ-Nq-4bP" id="jla-4o-VlV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93Q-Ck-oyt" userLabel="First Responder" sceneMemberID="firstResponder"/>

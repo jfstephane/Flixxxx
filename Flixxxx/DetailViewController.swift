@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var frontImage: UIImageView!
+    @IBOutlet weak var trailerButton: UIBarButtonItem!
     
     var movie: [String : Any]?
     
