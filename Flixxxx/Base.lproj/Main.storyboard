@@ -66,7 +66,7 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-iF-1W1">
-                                <rect key="frame" x="169" y="384" width="37" height="37"/>
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0013398354036781375" green="0.02933779048080775" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
@@ -144,7 +144,11 @@
                         <viewLayoutGuide key="safeArea" id="a1Y-ZF-S8V"/>
                     </view>
                     <navigationItem key="navigationItem" id="1mR-Hr-Fg7">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="play" id="OJZ-Nq-4bP"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="play" id="OJZ-Nq-4bP">
+                            <connections>
+                                <segue destination="Kai-cL-04r" kind="show" id="1WY-zU-nxE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="qRs-8T-ODg" id="HDa-Ze-vHO"/>
@@ -306,6 +310,7 @@
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="XXv-Zp-0yz"/>
         <segue reference="H4r-Js-CCR"/>
     </inferredMetricsTieBreakers>
 </document>
