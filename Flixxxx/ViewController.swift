@@ -13,8 +13,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
 
 @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+   
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var movies: [[String: Any]] = []
    // var filteredMovies: [[String: Any]] = [];
@@ -70,7 +71,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 self.movies = dataDictionary["results"] as! [[String: Any]]
-                 self.filteredMovies = self.movies;
+                 //self.filteredMovies = self.movies;
                 self.tableView.reloadData()
             }
             self.refreshControl.endRefreshing()
@@ -85,7 +86,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.movies.count
+        //return self.movies.count
+        if self.searchBar.text!.isEmpty{
+            return self.movies.count
+        }else{
+            return filteredMovies?.count ?? 0
+        }
         
     }
     
@@ -128,6 +134,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
         
+        
        
         
         //let imageView = UIImageView(frame: posterImage)
@@ -161,6 +168,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(200)
     }
+    
+    
     
     /*func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
