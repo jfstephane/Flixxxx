@@ -17,8 +17,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var searchBar: UISearchBar!
     
     var movies: [[String: Any]] = []
-    var searchedMovies = [[String: Any]]()
-    var filteredMovies: [[String: Any]] = [];
+   // var filteredMovies: [[String: Any]] = [];
+        var filteredMovies: [[String: Any]]?
+    var reasultsController = UITableViewController()
+    var url_api: String!
     var refreshControl: UIRefreshControl!
     //var searchController: UISearchController!
     
@@ -28,8 +30,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-        
+       //activityIndicator.startAnimating()
+        self.navigationItem.titleView = searchBar
         
         self.refreshControl = UIRefreshControl()
         
@@ -84,6 +86,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movies.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -189,11 +192,47 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchBar.setShowsCancelButton(true, animated: true)
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+   /* func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredMovies = searchText.isEmpty ? movies : movies.filter{ (movie: [String: Any]) -> Bool in
             return (movie["title"] as! String).localizedCaseInsensitiveContains(searchText)
         }
         tableView.reloadData()
+    }*/
+    
+   /* func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filteredMovies = searchText.isEmpty ? self.movies : self.movies.filter({(movie) -> Bool in
+            return (movie["title"] as! String).range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        })
+        self.tableView.reloadData()
+    }*/
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // When there is no text, filteredData is the same as the original data
+        // When user has entered text into the search box
+        // Use the filter method to iterate over all items in the data array
+        // For each item, return true if the item should be included and false if the
+        // item should NOT be included
+        if(searchText.isEmpty){
+            let alertController = UIAlertController(title: "Search field empty", message: "Cannot get result for empty search...", preferredStyle: .alert)
+            
+            // create an OK action
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                // handle response here.
+                // self.fetchAllMovies()
+            }
+            // add the OK action to the alert controller
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true) {
+                // optional code for what happens after the alert controller has finished presenting
+            }
+        }else{
+            self.activityIndicator.startAnimating()
+            //searchText
+            url_api = "https://api.themoviedb.org/3/search/movie?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&query=\(searchText)"
+            addMovies();
+        }
+        
+        
     }
 
    
